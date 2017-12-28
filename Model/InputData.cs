@@ -7,9 +7,9 @@ namespace historianproductionservice.Model
         [Required]
         public typeEnum type{get;set;}
         [Required]
-        public string order{get;set;}
+        public int orderId{get;set;}
         [Required]
-        public string product{get;set;}
+        public int productId{get;set;}
         [Required]
         public double? quantity{get;set;}
         [Required]
