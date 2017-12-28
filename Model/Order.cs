@@ -6,6 +6,7 @@ namespace historianproductionservice.Model
     public class Order
     {
         public int id{get;set;}
+        public int productionOrderId{get;set;}
         public string order{get;set;}
         public IList<Product> productsInput{get;set;}
         public IList<Product> productsOutput{get;set;}

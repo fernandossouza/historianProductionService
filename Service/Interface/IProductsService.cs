@@ -4,13 +4,9 @@ using historianproductionservice.Model;
 
 namespace historianproductionservice.Service.Interface
 {
-    public interface IHistorianProductionService
+    public interface IProductsService
     {
-        Task<Order> getOrder(int orderId);
-
         Task<InputData> addProduct(InputData inputData);
-
-
-         
+   
     }
 }
