@@ -1,0 +1,10 @@
+C:\Users\fernandos\Documents\Projetos\Mahle\Projeto\APIs\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.csproj.CoreCompileInputs.cache
+C:\Users\fernandos\Documents\Projetos\Mahle\Projeto\APIs\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.AssemblyInfoInputs.cache
+C:\Users\fernandos\Documents\Projetos\Mahle\Projeto\APIs\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.AssemblyInfo.cs
+C:\Users\fernandos\Documents\Projetos\Mahle\Projeto\APIs\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.deps.json
+C:\Users\fernandos\Documents\Projetos\Mahle\Projeto\APIs\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.runtimeconfig.json
+C:\Users\fernandos\Documents\Projetos\Mahle\Projeto\APIs\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.runtimeconfig.dev.json
+C:\Users\fernandos\Documents\Projetos\Mahle\Projeto\APIs\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.dll
+C:\Users\fernandos\Documents\Projetos\Mahle\Projeto\APIs\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.pdb
+C:\Users\fernandos\Documents\Projetos\Mahle\Projeto\APIs\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.dll
+C:\Users\fernandos\Documents\Projetos\Mahle\Projeto\APIs\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.pdb
