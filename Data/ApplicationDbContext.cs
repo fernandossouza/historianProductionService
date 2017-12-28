@@ -10,7 +10,7 @@ namespace historianproductionservice.Data
 
         }
 
-        public DbSet<Order> ToolTypes{get;set;}
-        public DbSet<Product> Tools{get;set;}
+        public DbSet<Order> Orders{get;set;}
+        public DbSet<Product> Products{get;set;}
     }
 }
