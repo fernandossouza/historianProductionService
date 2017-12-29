@@ -24,6 +24,8 @@ namespace historianproductionservice.Service
         public async Task<Order> getOrderId(int orderId)
         {
             var order = await _context.Orders
+                        .Include(x =>x.productsInput)
+                        .Include(x =>x.productsOutput)
                         .Where(x=>x.id == orderId)                        
                         .FirstOrDefaultAsync();
             
@@ -33,6 +35,8 @@ namespace historianproductionservice.Service
         public async Task<Order> getProductionOrderId(int productionOrderId)
         {
             var order = await _context.Orders
+                        .Include(x =>x.productsInput)
+                        .Include(x =>x.productsOutput)
                         .Where(x=>x.productionOrderId == productionOrderId)                        
                         .FirstOrDefaultAsync();
             

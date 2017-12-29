@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using historianproductionservice.Data;
+using historianproductionservice.Service;
+using historianproductionservice.Service.Interface;
 
 namespace historianproductionservice
 {
@@ -25,6 +27,9 @@ namespace historianproductionservice
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+             services.AddSingleton<IConfiguration>(Configuration);
+            services.AddTransient<IOrderService,OrderService>();
+            services.AddTransient<IProductsService,ProductService>();
             services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
                 {
                     builder.AllowAnyOrigin()
@@ -40,7 +45,7 @@ namespace historianproductionservice
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseCors("CorsPolicy");
-            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
