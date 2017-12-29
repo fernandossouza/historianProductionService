@@ -9,6 +9,7 @@ namespace historianproductionservice.Model
         [Required]
         public int productionOrderId{get;set;}
         [Required]
+        [ValidadeProductInRecipe]
         public int productId{get;set;}
         [Required]
         public double? quantity{get;set;}
