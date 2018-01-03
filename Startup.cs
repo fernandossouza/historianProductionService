@@ -27,9 +27,11 @@ namespace historianproductionservice
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-             services.AddSingleton<IConfiguration>(Configuration);
-            services.AddTransient<IOrderService,OrderService>();
-            services.AddTransient<IProductsService,ProductService>();
+            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IProductsService, ProductService>();
+            services.AddSingleton<IProductionOrderService, ProductionOrderService>();
+
             services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
                 {
                     builder.AllowAnyOrigin()
