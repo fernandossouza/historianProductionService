@@ -125,7 +125,7 @@ namespace historianproductionservice.Service
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            var builder = new UriBuilder(_configuration["ProductionOrderServiceEndpoint"] + "/api/productionorders/" + orderId);
+            var builder = new UriBuilder(_configuration["productionOrdersServiceEndpoint"] + "/api/productionorders/" + orderId);
             string url = builder.ToString();
             var result = await client.GetAsync(url);
             if (result.StatusCode == HttpStatusCode.OK)
