@@ -18,3 +18,13 @@ C:/Users/fernandos/Documents/Projetos/Mahle/Projeto/APIs/historianproductionserv
 /home/marcuss/Workspaces/Lorien/historianproductionservice/bin/Debug/netcoreapp2.0/historianproductionservice.runtimeconfig.dev.json
 /home/marcuss/Workspaces/Lorien/historianproductionservice/bin/Debug/netcoreapp2.0/historianproductionservice.dll
 /home/marcuss/Workspaces/Lorien/historianproductionservice/bin/Debug/netcoreapp2.0/historianproductionservice.pdb
+C:\Lorien\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.csproj.CoreCompileInputs.cache
+C:\Lorien\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.AssemblyInfoInputs.cache
+C:\Lorien\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.AssemblyInfo.cs
+C:\Lorien\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.dll
+C:\Lorien\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.pdb
+C:\Lorien\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.deps.json
+C:\Lorien\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.runtimeconfig.json
+C:\Lorien\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.runtimeconfig.dev.json
+C:\Lorien\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.dll
+C:\Lorien\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.pdb

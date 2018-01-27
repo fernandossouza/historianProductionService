@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "ac1ffc99d8368ce6da6fbd8865413248708f4e06"
+    "signature": "d38da568f85d82de526e361b4117679ecf316e7a"
   },
   "compilationOptions": {
     "defines": [
@@ -30,7 +30,7 @@
           "Microsoft.EntityFrameworkCore.Design": "2.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.0.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.0.1",
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.1"
         },
         "runtime": {
@@ -242,7 +242,7 @@
           "Microsoft.EntityFrameworkCore": "2.0.1",
           "Microsoft.EntityFrameworkCore.Design": "2.0.0",
           "Microsoft.EntityFrameworkCore.InMemory": "2.0.0",
-          "Microsoft.EntityFrameworkCore.Relational": "2.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite.Core": "2.0.0",
@@ -632,7 +632,7 @@
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/2.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.0.1",
-          "Microsoft.EntityFrameworkCore.Relational": "2.0.0"
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll": {}
@@ -786,7 +786,7 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore/2.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity": "2.0.0",
-          "Microsoft.EntityFrameworkCore.Relational": "2.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.Extensions.Identity.Stores": "2.0.0"
         },
         "runtime": {
@@ -1598,7 +1598,7 @@
       },
       "Microsoft.EntityFrameworkCore.Design/2.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "2.0.0"
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
@@ -1618,7 +1618,7 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/2.0.0": {
+      "Microsoft.EntityFrameworkCore.Relational/2.0.1": {
         "dependencies": {
           "Microsoft.CSharp": "4.4.0",
           "Microsoft.EntityFrameworkCore": "2.0.1",
@@ -1633,7 +1633,7 @@
       },
       "Microsoft.EntityFrameworkCore.Relational.Design/1.1.2": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "2.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "NETStandard.Library": "2.0.0"
         },
         "runtime": {
@@ -1652,7 +1652,7 @@
       "Microsoft.EntityFrameworkCore.Sqlite.Core/2.0.0": {
         "dependencies": {
           "Microsoft.Data.Sqlite.Core": "2.0.0",
-          "Microsoft.EntityFrameworkCore.Relational": "2.0.0"
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {}
@@ -1663,7 +1663,7 @@
       },
       "Microsoft.EntityFrameworkCore.SqlServer/2.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "2.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "System.Data.SqlClient": "4.4.0"
         },
         "runtime": {
@@ -2384,7 +2384,7 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "Npgsql/3.2.5": {
+      "Npgsql/3.2.6": {
         "dependencies": {
           "System.Threading.Tasks.Extensions": "4.4.0"
         },
@@ -2395,13 +2395,13 @@
           "lib/netstandard2.0/Npgsql.dll": {}
         }
       },
-      "Npgsql.EntityFrameworkCore.PostgreSQL/2.0.0": {
+      "Npgsql.EntityFrameworkCore.PostgreSQL/2.0.1": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.0.1",
-          "Microsoft.EntityFrameworkCore.Relational": "2.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.Extensions.DependencyInjection": "2.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
-          "Npgsql": "3.2.5"
+          "Npgsql": "3.2.6"
         },
         "runtime": {
           "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
@@ -2413,13 +2413,13 @@
       "Npgsql.EntityFrameworkCore.PostgreSQL.Design/1.1.1": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.0.1",
-          "Microsoft.EntityFrameworkCore.Relational": "2.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
           "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.2",
           "Microsoft.Extensions.DependencyInjection": "2.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
           "NETStandard.Library": "2.0.0",
-          "Npgsql": "3.2.5",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.0.0"
+          "Npgsql": "3.2.6",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.0.1"
         },
         "runtime": {
           "lib/netstandard1.3/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll": {}
@@ -4755,12 +4755,12 @@
       "path": "microsoft.entityframeworkcore.inmemory/2.0.0",
       "hashPath": "microsoft.entityframeworkcore.inmemory.2.0.0.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Relational/2.0.0": {
+    "Microsoft.EntityFrameworkCore.Relational/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/Ay6EZXUZuPLCKdbLW59AuwCm+hqDgIxBzDTHIx6uEIvDFfC0Bs99CRL8Lgi1NgU9NOhFDmeRgE1goViru+Zgg==",
-      "path": "microsoft.entityframeworkcore.relational/2.0.0",
-      "hashPath": "microsoft.entityframeworkcore.relational.2.0.0.nupkg.sha512"
+      "sha512": "sha512-aZgfEDEzub+n9Kmsz/l4iiUHfB+R2iDDAFtW55OLpT7ANj7mS8k/bq8mqd60rVPgWKKy1l0+BK26ao4el/07lA==",
+      "path": "microsoft.entityframeworkcore.relational/2.0.1",
+      "hashPath": "microsoft.entityframeworkcore.relational.2.0.1.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational.Design/1.1.2": {
       "type": "package",
@@ -5196,19 +5196,19 @@
       "path": "newtonsoft.json.bson/1.0.1",
       "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
     },
-    "Npgsql/3.2.5": {
+    "Npgsql/3.2.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-89z5pHuLuwjkHz/cQLuM/YxlepR/0NKJP+Cvu8z1cAMv7AdKZnN5leQqV6HxIQDR245Xal1w5OH7kDb9hDRupg==",
-      "path": "npgsql/3.2.5",
-      "hashPath": "npgsql.3.2.5.nupkg.sha512"
+      "sha512": "sha512-GMjVKgbNLKne/rGSvCQqZHt2aZfBByuw7jUD55V+svkdlG8jKoVCGjUyfPpET3XSoneqrJlf6E578mCh4H5aeg==",
+      "path": "npgsql/3.2.6",
+      "hashPath": "npgsql.3.2.6.nupkg.sha512"
     },
-    "Npgsql.EntityFrameworkCore.PostgreSQL/2.0.0": {
+    "Npgsql.EntityFrameworkCore.PostgreSQL/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-saKCNK8A5OW3sUhL/tvYqNyKUK7AbIQlZUVmjn4Fw9wstyopECeF/9Er1fexRLpWev0/H9fUzFclTrXm+omsag==",
-      "path": "npgsql.entityframeworkcore.postgresql/2.0.0",
-      "hashPath": "npgsql.entityframeworkcore.postgresql.2.0.0.nupkg.sha512"
+      "sha512": "sha512-dKa3U027m5vSrfSTDztZgK5Wv6PoBdUuUfTL+mqMYWXjzYgMANo4x6JsqHvo56FFDjABAzK8pO8oBMWjK2yKDg==",
+      "path": "npgsql.entityframeworkcore.postgresql/2.0.1",
+      "hashPath": "npgsql.entityframeworkcore.postgresql.2.0.1.nupkg.sha512"
     },
     "Npgsql.EntityFrameworkCore.PostgreSQL.Design/1.1.1": {
       "type": "package",
