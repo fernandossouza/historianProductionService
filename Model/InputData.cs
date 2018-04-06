@@ -14,6 +14,7 @@ namespace historianproductionservice.Model
         [Required]
         public double? quantity{get;set;}
         [Required]
-        public string batch{get;set;}
+        public string batch{get;set;}        
+        public string unity{get;set;}
     }
 }

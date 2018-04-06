@@ -9,5 +9,6 @@ namespace historianproductionservice.Model
         public double quantity { get; set; }
         public string batch { get; set; }
         public long date { get; set; }
+        public string unity{get;set;}
     }
 }
