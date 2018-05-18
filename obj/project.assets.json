@@ -42,6 +42,18 @@
           }
         }
       },
+      "lorien.securityfilter/0.1.24": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.All": "2.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/securityfilter.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/securityfilter.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/2.4.0": {
         "type": "package",
         "dependencies": {
@@ -4826,6 +4838,16 @@
         "runtimes/win-arm/native/libuv.dll",
         "runtimes/win-x64/native/libuv.dll",
         "runtimes/win-x86/native/libuv.dll"
+      ]
+    },
+    "lorien.securityfilter/0.1.24": {
+      "sha512": "+Jm1lUX4klu9cpzuda2plUGm8ifGtTm1M2Gen5uBeBWqBq01rPL0qN6UkWTyNv+QJdY291u1MTCLy7dQHIk6kQ==",
+      "type": "package",
+      "path": "lorien.securityfilter/0.1.24",
+      "files": [
+        "lib/netcoreapp2.0/securityfilter.dll",
+        "lorien.securityfilter.0.1.24.nupkg.sha512",
+        "lorien.securityfilter.nuspec"
       ]
     },
     "Microsoft.ApplicationInsights/2.4.0": {
@@ -12647,35 +12669,39 @@
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 2.0.1",
-      "Npgsql.EntityFrameworkCore.PostgreSQL.Design >= 1.1.1"
+      "Npgsql.EntityFrameworkCore.PostgreSQL.Design >= 1.1.1",
+      "lorien.securityfilter >= 0.1.24"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fernandos\\.nuget\\packages\\": {},
+    "C:\\Users\\fernandat\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fernandos\\Documents\\Projetos\\Mahle\\Projeto\\APIs\\historianproductionservice\\historianproductionservice.csproj",
+      "projectUniqueName": "C:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\historianproductionservice.csproj",
       "projectName": "historianproductionservice",
-      "projectPath": "C:\\Users\\fernandos\\Documents\\Projetos\\Mahle\\Projeto\\APIs\\historianproductionservice\\historianproductionservice.csproj",
-      "packagesPath": "C:\\Users\\fernandos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fernandos\\Documents\\Projetos\\Mahle\\Projeto\\APIs\\historianproductionservice\\obj\\",
+      "projectPath": "C:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\historianproductionservice.csproj",
+      "packagesPath": "C:\\Users\\fernandat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\fernandos\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\fernandat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
@@ -12691,42 +12717,46 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
-          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
           },
           "Microsoft.AspNetCore.Cors": {
             "target": "Package",
-            "version": "2.0.1"
+            "version": "[2.0.1, )"
           },
           "Microsoft.AspNetCore.ResponseCaching": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
-            "version": "2.0.1"
+            "version": "[2.0.1, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
-            "version": "2.0.1"
+            "version": "[2.0.1, )"
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
             "target": "Package",
-            "version": "1.1.1"
+            "version": "[1.1.1, )"
+          },
+          "lorien.securityfilter": {
+            "target": "Package",
+            "version": "[0.1.24, )"
           }
         },
         "imports": [

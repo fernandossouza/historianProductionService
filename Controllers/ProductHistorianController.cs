@@ -2,43 +2,37 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using historianproductionservice.Service.Interface;
 using historianproductionservice.Model;
+using historianproductionservice.Service.Interface;
+using Microsoft.AspNetCore.Mvc;
+using securityfilter;
 
-namespace historianproductionservice.Controllers
-{
-    [Route("api/[controller]")]
-    public class ProductHistorianController : Controller
-    {
+namespace historianproductionservice.Controllers {
+    [Route ("api/[controller]")]
+    public class ProductHistorianController : Controller {
         private readonly IProductsService _productService;
 
-        public ProductHistorianController (IProductsService productService)
-        {
+        public ProductHistorianController (IProductsService productService) {
             _productService = productService;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]InputData inputData)
-        {
-            try
-            {
-                if(ModelState.IsValid)
-                {
-                    inputData = await _productService.addProduct(inputData);
+        [SecurityFilter ("historian_productio__allow_update")]
+        public async Task<IActionResult> Post ([FromBody] InputData inputData) {
+            try {
+                if (ModelState.IsValid) {
+                    inputData = await _productService.addProduct (inputData);
 
-                    if(inputData == null)
-                        return StatusCode(500, "erro in api");
+                    if (inputData == null)
+                        return StatusCode (500, "erro in api");
 
-                    return Created($"api/Product/",inputData);
+                    return Created ($"api/Product/", inputData);
                 }
-                return BadRequest(ModelState);
-            }
-            catch(Exception ex)
-            {
-                return StatusCode(500, ex.ToString());
+                return BadRequest (ModelState);
+            } catch (Exception ex) {
+                return StatusCode (500, ex.ToString ());
             }
         }
-        
+
     }
 }

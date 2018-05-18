@@ -11,41 +11,37 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using securityfilter;
 
-namespace historianproductionservice.Controllers
-{
-    [Route("")]
+namespace historianproductionservice.Controllers {
+    [Route ("")]
 
-    public class GatewayController : Controller
-    {
+    public class GatewayController : Controller {
         private IConfiguration _configuration;
         private readonly IProductionOrderService _productionOrderService;
 
-        public GatewayController(IConfiguration configuration,
-               IProductionOrderService productionOrderService)
-        {
+        public GatewayController (IConfiguration configuration,
+            IProductionOrderService productionOrderService) {
             _configuration = configuration;
             _productionOrderService = productionOrderService;
         }
 
+        [HttpGet ("gateway/productionorders/")]
+        [Produces ("application/json")]
+        [SecurityFilter ("historian_production__allow_read")]
+        public async Task<IActionResult> GetRecipes ([FromQuery] int startat, [FromQuery] int quantity, [FromQuery] string fieldFilter, [FromQuery] string fieldValue, [FromQuery] string orderField, [FromQuery] string order) {
 
-        [HttpGet("gateway/productionorders/")]
-        [Produces("application/json")]
-        public async Task<IActionResult> GetRecipes([FromQuery]int startat, [FromQuery]int quantity,
-        [FromQuery]string fieldFilter, [FromQuery]string fieldValue, [FromQuery]string orderField, [FromQuery] string order)
-        {
-
-            var productionOrders = await _productionOrderService.getProductionOrders(startat, quantity, fieldFilter,
-        fieldValue, orderField, order);
-            return Ok(productionOrders);
+            var productionOrders = await _productionOrderService.getProductionOrders (startat, quantity, fieldFilter,
+                fieldValue, orderField, order);
+            return Ok (productionOrders);
         }
 
-        [HttpGet("gateway/recipes/{id}")]
-        [Produces("application/json")]
-        public async Task<IActionResult> GetRecipe(int id)
-        {
-            var productionOrder = await _productionOrderService.getProductionOrder(id);
-            return Ok(productionOrder);
+        [HttpGet ("gateway/recipes/{id}")]
+        [Produces ("application/json")]
+        [SecurityFilter ("historian_production__allow_read")]
+        public async Task<IActionResult> GetRecipe (int id) {
+            var productionOrder = await _productionOrderService.getProductionOrder (id);
+            return Ok (productionOrder);
         }
 
     }
