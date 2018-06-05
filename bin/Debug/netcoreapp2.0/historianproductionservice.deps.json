@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "d38da568f85d82de526e361b4117679ecf316e7a"
+    "signature": "468dce115e6e87aafa90b8857fa5ae8a5710e442"
   },
   "compilationOptions": {
     "defines": [
@@ -31,7 +31,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "2.0.1",
-          "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.1"
+          "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.1",
+          "lorien.securityfilter": "0.2.1"
         },
         "runtime": {
           "historianproductionservice.dll": {}
@@ -77,6 +78,17 @@
             "rid": "win-x86",
             "assetType": "native"
           }
+        }
+      },
+      "lorien.securityfilter/0.2.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.All": "2.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/securityfilter.dll": {}
+        },
+        "compile": {
+          "lib/netcoreapp2.0/securityfilter.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/2.4.0": {
@@ -4047,6 +4059,13 @@
       "sha512": "sha512-GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "path": "libuv/1.10.0",
       "hashPath": "libuv.1.10.0.nupkg.sha512"
+    },
+    "lorien.securityfilter/0.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+jzxsMbItisuUOY1o/yuflEc9wEGVQmHJxP4H9qcndT8YoYPVL14CDdhZ8dWPz2exJMhpeGXq78ELeGR7tfhOA==",
+      "path": "lorien.securityfilter/0.2.1",
+      "hashPath": "lorien.securityfilter.0.2.1.nupkg.sha512"
     },
     "Microsoft.ApplicationInsights/2.4.0": {
       "type": "package",

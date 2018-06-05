@@ -42,7 +42,7 @@
           }
         }
       },
-      "lorien.securityfilter/0.1.24": {
+      "lorien.securityfilter/0.2.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0"
@@ -4840,13 +4840,13 @@
         "runtimes/win-x86/native/libuv.dll"
       ]
     },
-    "lorien.securityfilter/0.1.24": {
-      "sha512": "+Jm1lUX4klu9cpzuda2plUGm8ifGtTm1M2Gen5uBeBWqBq01rPL0qN6UkWTyNv+QJdY291u1MTCLy7dQHIk6kQ==",
+    "lorien.securityfilter/0.2.2": {
+      "sha512": "VSwghghu/YI2R7IR28TQxziGingKcHxIOEuN28VkVnO+rvUhmabG0jp7RWwu3QkykBpSZ8842mKxKmiJzVGZvA==",
       "type": "package",
-      "path": "lorien.securityfilter/0.1.24",
+      "path": "lorien.securityfilter/0.2.2",
       "files": [
         "lib/netcoreapp2.0/securityfilter.dll",
-        "lorien.securityfilter.0.1.24.nupkg.sha512",
+        "lorien.securityfilter.0.2.2.nupkg.sha512",
         "lorien.securityfilter.nuspec"
       ]
     },
@@ -12670,7 +12670,7 @@
       "Microsoft.NETCore.App >= 2.0.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 2.0.1",
       "Npgsql.EntityFrameworkCore.PostgreSQL.Design >= 1.1.1",
-      "lorien.securityfilter >= 0.1.24"
+      "lorien.securityfilter >= 0.2.2"
     ]
   },
   "packageFolders": {
@@ -12681,17 +12681,18 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\historianproductionservice.csproj",
+      "projectUniqueName": "c:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\historianproductionservice.csproj",
       "projectName": "historianproductionservice",
-      "projectPath": "C:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\historianproductionservice.csproj",
+      "projectPath": "c:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\historianproductionservice.csproj",
       "packagesPath": "C:\\Users\\fernandat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\obj\\",
+      "outputPath": "c:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+        "c:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\NuGet.Config",
         "C:\\Users\\fernandat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
@@ -12701,6 +12702,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "c:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\./Libs/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -12756,7 +12758,7 @@
           },
           "lorien.securityfilter": {
             "target": "Package",
-            "version": "[0.1.24, )"
+            "version": "[0.2.2, )"
           }
         },
         "imports": [
