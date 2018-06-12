@@ -10,5 +10,6 @@ namespace historianproductionservice.Model
         public string batch { get; set; }
         public long date { get; set; }
         public string unity{get;set;}
+        public string username{get;set;}
     }
 }

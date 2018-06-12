@@ -114,6 +114,7 @@ namespace historianproductionservice.Service
             product.batch = inputData.batch;
             product.quantity = inputData.quantity.Value;
             product.date = DateTime.Now.Ticks;
+            product.username = inputData.username;
 
             return product;
         }
@@ -133,11 +134,19 @@ namespace historianproductionservice.Service
                 OrderRecipe = (await client.GetStringAsync(url));
                 return OrderRecipe;
             }
+            Console.WriteLine("Retornando nulo");
             return null;
         }
 
         private (bool, string, string) CheckProductInRecipe(int ProductId, string OrderRecipe)
         {
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("MyLog");
+            Console.WriteLine(OrderRecipe);
+            Console.WriteLine("");
+            Console.WriteLine("");
             JObject recipeJson = JObject.Parse(OrderRecipe);
             string ProductName = string.Empty;
             string ProductionOrderName = string.Empty;
@@ -184,6 +193,10 @@ namespace historianproductionservice.Service
 
         public bool ValidateProductIdInRecipe(int productId, int productionOrderId, typeEnum type)
         {
+            Console.WriteLine("MyLog2");
+            Console.WriteLine(GetProductionOrderApi(productionOrderId).Result);
+            Console.WriteLine("MyLog3");
+            Console.WriteLine(GetProductionOrderApi(productionOrderId).Result.ToString());
             string recipe = GetProductionOrderApi(productionOrderId).Result;
             bool checkRecipe = false;
             string ProductName = string.Empty;

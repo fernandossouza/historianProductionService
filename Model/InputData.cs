@@ -16,5 +16,6 @@ namespace historianproductionservice.Model
         [Required]
         public string batch{get;set;}        
         public string unity{get;set;}
+        public string username{get;set;}
     }
 }
