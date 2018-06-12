@@ -19,6 +19,12 @@ namespace historianproductionservice.Controllers {
         [HttpPost]
         [SecurityFilter ("historian_productio__allow_update")]
         public async Task<IActionResult> Post ([FromBody] InputData inputData) {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Entrou \n Model");
+            Console.WriteLine(inputData);
+            Console.WriteLine();
+            Console.WriteLine();
             try {
                 if (ModelState.IsValid) {
                     inputData = await _productService.addProduct (inputData);

@@ -22,6 +22,8 @@ product annotation used in production
 * batch: batch of product
   * String (50 characters)
   * Required
+* username: user loged into the system
+  * String 
 
 ### JSON Example
 
@@ -31,7 +33,8 @@ product annotation used in production
   "productionOrderId": 1,
   "productId": 6,
   "quantity": 2.5,
-  "batch": "lote"
+  "batch": "lote",
+  "username": "fernando"
 }
 ```
 
