@@ -11,5 +11,6 @@ namespace historianproductionservice.Model
         public long date { get; set; }
         public string unity{get;set;}
         public string username{get;set;}
+        public string code{get;set;}
     }
 }

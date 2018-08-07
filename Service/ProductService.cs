@@ -115,6 +115,7 @@ namespace historianproductionservice.Service
             product.quantity = inputData.quantity.Value;
             product.date = DateTime.Now.Ticks;
             product.username = inputData.username;
+            product.code = inputData.code;
 
             return product;
         }
