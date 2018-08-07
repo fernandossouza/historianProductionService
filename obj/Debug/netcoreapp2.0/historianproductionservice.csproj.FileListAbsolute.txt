@@ -38,3 +38,14 @@ C:\Users\fernandat\workspace\Mahle\historianproductionservice\obj\Debug\netcorea
 C:\Users\fernandat\workspace\Mahle\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.AssemblyInfo.cs
 C:\Users\fernandat\workspace\Mahle\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.dll
 C:\Users\fernandat\workspace\Mahle\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.pdb
+C:\Users\ricardos\Desktop\ProjetosC#\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.deps.json
+C:\Users\ricardos\Desktop\ProjetosC#\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.runtimeconfig.json
+C:\Users\ricardos\Desktop\ProjetosC#\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.runtimeconfig.dev.json
+C:\Users\ricardos\Desktop\ProjetosC#\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.dll
+C:\Users\ricardos\Desktop\ProjetosC#\historianproductionservice\bin\Debug\netcoreapp2.0\historianproductionservice.pdb
+C:\Users\ricardos\Desktop\ProjetosC#\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.csprojAssemblyReference.cache
+C:\Users\ricardos\Desktop\ProjetosC#\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.csproj.CoreCompileInputs.cache
+C:\Users\ricardos\Desktop\ProjetosC#\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.AssemblyInfoInputs.cache
+C:\Users\ricardos\Desktop\ProjetosC#\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.AssemblyInfo.cs
+C:\Users\ricardos\Desktop\ProjetosC#\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.dll
+C:\Users\ricardos\Desktop\ProjetosC#\historianproductionservice\obj\Debug\netcoreapp2.0\historianproductionservice.pdb
