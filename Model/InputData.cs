@@ -17,6 +17,7 @@ namespace historianproductionservice.Model
         public string batch{get;set;}        
         public string unity{get;set;}
         public string username{get;set;}
-        public string code{get; set;}
+        public string code{get; set;}   
+        public string productType{get; set;}     
     }
 }
