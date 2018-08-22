@@ -22,7 +22,7 @@ namespace historianproductionservice.Service
         {
             _configuration = configuration;
         }
-        public async Task<ProductionOrder> getProductionOrder(int productionOrderId)
+        public async Task<ProductionOrder> getProductionOrder(long productionOrderId)
         {
             try
             {

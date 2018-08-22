@@ -8,6 +8,6 @@ namespace historianproductionservice.Service.Interface
     {
         Task<List<ProductionOrder>> getProductionOrders(int startat, int quantity,
         string fieldFilter, string fieldValue, string orderField, string order);
-        Task<ProductionOrder> getProductionOrder(int productionOrderId);
+        Task<ProductionOrder> getProductionOrder(long productionOrderId);
     }
 }

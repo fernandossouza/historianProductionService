@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace historianproductionservice.Model
 {
     public class ProductTraceability
@@ -13,5 +15,7 @@ namespace historianproductionservice.Model
         public string username{get;set;}
         public string code{get;set;}
         public string productType{get; set;}  
+        [NotMapped]
+        public long endDate{get; set;}  
     }
 }
