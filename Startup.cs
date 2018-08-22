@@ -30,8 +30,10 @@ namespace historianproductionservice {
         public void ConfigureServices (IServiceCollection services) {
             services.AddTransient<IOrderService, OrderService> ();
             services.AddTransient<IProductsService, ProductService> ();
+            services.AddTransient<IGenealogyService, GenealogyService> ();
             services.AddSingleton<IProductionOrderService, ProductionOrderService> ();
-
+            services.AddSingleton<IProductionOrderService, ProductionOrderService> ();
+            services.AddSingleton<IGenealogyService, GenealogyService> ();
             services.AddCors (o => o.AddPolicy ("CorsPolicy", builder => {
                 builder.AllowAnyOrigin ()
                     .AllowAnyMethod ()
@@ -50,6 +52,8 @@ namespace historianproductionservice {
                 options.UseNpgsql (Configuration.GetConnectionString ("HistorianProductionDB")));
             services.AddMvc ();
         }
+
+        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure (IApplicationBuilder app, IHostingEnvironment env) {

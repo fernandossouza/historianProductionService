@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace historianproductionservice.Model
 {
@@ -9,15 +10,19 @@ namespace historianproductionservice.Model
         [Required]
         public int productionOrderId{get;set;}
         [Required]
-        [ValidadeProductInRecipe]
+        //[ValidadeProductInRecipe]
         public int productId{get;set;}
         [Required]
         public double? quantity{get;set;}
-        [Required]
+        [Required]        
         public string batch{get;set;}        
         public string unity{get;set;}
         public string username{get;set;}
         public string code{get; set;}   
-        public string productType{get; set;}     
+        public string productType{get; set;}               
+
+        public string ToString(){
+            return "Type : "+ type + "\nproductionOrderId : " + productionOrderId + "\nproductId : " + productId +"\nquantity : " + quantity + "\nbatch : " + batch + "\nunity : " + unity + "\ncode : " + code + "\nproductType : "+ productType;        
+        } 
     }
 }

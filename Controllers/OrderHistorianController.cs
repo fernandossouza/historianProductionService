@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using historianproductionservice.Model;
+using historianproductionservice.Model.Genealogy;
 using historianproductionservice.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
 using securityfilter;
@@ -14,7 +15,7 @@ namespace historianproductionservice.Controllers {
 
         public OrderHistorianController (IOrderService orderService) {
             _orderService = orderService;
-        }
+        }             
 
         [HttpGet ("{id}")]
         [SecurityFilter ("historian_production__allow_read")]
