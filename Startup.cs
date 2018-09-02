@@ -31,9 +31,7 @@ namespace historianproductionservice {
             services.AddTransient<IOrderService, OrderService> ();
             services.AddTransient<IProductsService, ProductService> ();
             services.AddTransient<IGenealogyService, GenealogyService> ();
-            services.AddSingleton<IProductionOrderService, ProductionOrderService> ();
-            services.AddSingleton<IProductionOrderService, ProductionOrderService> ();
-            services.AddSingleton<IGenealogyService, GenealogyService> ();
+            services.AddSingleton<IProductionOrderService, ProductionOrderService> ();           
             services.AddCors (o => o.AddPolicy ("CorsPolicy", builder => {
                 builder.AllowAnyOrigin ()
                     .AllowAnyMethod ()

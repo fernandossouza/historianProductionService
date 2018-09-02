@@ -14,6 +14,8 @@ using System.Collections.Generic;
 using System.Linq;
 using historianproductionservice.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Http.Headers;
+using System.Web;
 
 namespace historianproductionservice.Service{
     public class GenealogyService : IGenealogyService
@@ -40,7 +42,7 @@ namespace historianproductionservice.Service{
         public async Task<List<Genealogy>> getByCode(long? startdate, long? endDate, string cod){
             return _context.Genealogy.Include(x => x.outputRolls).ThenInclude(outputRolls => outputRolls.inputRolls).Include(x => x.outputRolls)
                 .ThenInclude(outputRolls => outputRolls.ligas).ThenInclude(ligas=>ligas.productsInput).Include(x => x.outputRolls)
-                .ThenInclude(outputRolls => outputRolls.tools).Where(x => x.startDate > startdate && x.startDate < endDate && cod == x.recipeCode).ToList();
+                .ThenInclude(outputRolls => outputRolls.tools).Where(x => x.startDate > startdate && x.startDate < endDate && cod == x.recipeid).ToList();
         }
 
         public async Task<List<Genealogy>> getByDate(long? startdate, long? endDate){
@@ -50,24 +52,22 @@ namespace historianproductionservice.Service{
         }
 
         public async Task<string> addEndRoll(InputData inputData){                             
-            try{
-                Console.WriteLine(inputData.ToString());            
-                Genealogy g = (await getByOp(inputData.productionOrderId.ToString()))[0];
-                EndRoll e = new EndRoll();
-                e.endDate = DateTime.Now.Ticks; e.productionOrderId = inputData.productionOrderId;
-                e.startDate = _context.EndRoll.Where(x=> x.productionOrderId == g.orderId).Max(p => (long?)p.endDate);
-                e.quantity = inputData.quantity.ToString();    
+            try{                
+                List<Genealogy> gs = await getByOp(inputData.productionOrderId.ToString());                
+                Console.WriteLine("Passou pela instancia de g");                            
+                Genealogy g;bool v = false;
                 //Verifica se existe genealogy cadastrada na base de dados !               
-                if(g == null){
-                    var productionOrder = await _productionOrderService.getProductionOrder(inputData.productionOrderId);
-                    builder = new UriBuilder(_configuration["productionOrdersServiceEndpoint"]+"/api/productionorders/"+inputData.productionOrderId);
-                    g.recipeCode = JObject.Parse(await client.GetStringAsync(builder.ToString()))["recipe"]["recipecode"].ToString();    
-                    g.recipeid = JObject.Parse(await client.GetStringAsync(builder.ToString()))["recipe"]["recipeid"].ToString();                               
-                    g = new Genealogy(inputData.productionOrderId,productionOrder.productionOrderNumber, (await getStartDateRoll(productionOrder.productionOrderId)), DateTime.Now.Ticks, new List<EndRoll>()); g.endDate = DateTime.Now.Ticks;                                                                                        
-                    _context.Genealogy.Add(g);
-                }else
-                    _context.Genealogy.Update(g);                          
-                List<ProductTraceability> productsInput = (await _orderService.getProductionOrderId((int)g.orderId)).productsInput;                                                        
+                if(gs.Count <= 0){
+                    v = true;
+                    g = await instanciaG(inputData);
+                    Console.WriteLine("Add");
+                    
+                }else{
+                    Console.WriteLine("Update");
+                    g = gs[0];                    
+                }
+                EndRoll e = await instanciaEndRoll(inputData, g);
+                List<ProductTraceability> productsInput = await geraListas((int)g.orderId);
                 List<ProductTraceability> productsInputLiga = productsInput.Where(c => c.productType=="liga").ToList();                
                 List<ProductTraceability> productsInputRolo = productsInput.Where(c => c.productType=="aco").ToList();                                   
                 productsInputLiga = await getProducts(e.startDate, e.endDate, productsInputLiga);                                                                
@@ -75,12 +75,51 @@ namespace historianproductionservice.Service{
                 var (listaRolo, listaLiga) = await criaListas(productsInputLiga, productsInputRolo);                  
                 e.ligas =listaLiga; e.inputRolls = listaRolo;                                                        
                 e.startDate = e.startDate == null ? g.startDate : e.startDate;
-                e.tools = await getTools((long)e.startDate, e.endDate); g.outputRolls.Add(e);                
+                e.tools = await getTools((long)e.startDate, e.endDate); g.outputRolls.Add(e);                                                
+                if(v)                        
+                    _context.Genealogy.Add(g);
+                else
+                    _context.Genealogy.Update(g);                      
                 _context.SaveChanges();
+                sendRollPLC(g.orderId);
                 return "true";
             }catch(ArgumentException e){
                 return e.Message +"\n "+ e.ParamName;
             }            
+        }
+
+        public async void sendRollPLC(long id){
+            builder = new UriBuilder(_configuration["interlevelAPI"]);                     
+            Console.WriteLine(await client.PostAsync(builder.Uri,new StringContent("{\"address\": \"Numero_ROLO\",\"value\":" + ( _context.EndRoll.Where(x=> x.productionOrderId == id).Count()+1).ToString() +",\"workstation\": \"Linha\"}")));                
+        }
+        public async Task<Genealogy> instanciaG(InputData inputData){
+            Genealogy g = new Genealogy();
+            var productionOrder = await _productionOrderService.getProductionOrder(inputData.productionOrderId);
+            builder = new UriBuilder(_configuration["productionOrdersServiceEndpoint"]+"/api/productionorders/"+inputData.productionOrderId);                        
+            Recipe r = JsonConvert.DeserializeObject<Recipe>(JObject.Parse((await client.GetStringAsync(builder.ToString())))["recipe"].ToString());                
+            Console.WriteLine(r.recipeId);                        
+            g = new Genealogy(inputData.productionOrderId,productionOrder.productionOrderNumber, (await getStartDateRoll(productionOrder.productionOrderId)), DateTime.Now.Ticks, new List<EndRoll>(), r.recipeCode, r.recipeId.ToString()); g.endDate = DateTime.Now.Ticks;                                                                                                    
+            return g;
+        }
+
+        public async Task<List<ProductTraceability>> geraListas(int id){
+            Order o = await _orderService.getProductionOrderId((int)id);              
+            if(o==null)
+                Console.WriteLine("O == null");            
+            if(o == null || o.productsInput == null || o.productsInput.Count == 0)
+                throw new System.ArgumentException("Não foram encontrados rolos de entrada", "Por favor cadastre o aço correspondente");
+            List<ProductTraceability> lista = o.productsInput;
+            return lista;
+        }
+
+        public async Task<EndRoll> instanciaEndRoll(InputData inputData, Genealogy g){
+            EndRoll e = new EndRoll();
+            e.endDate = DateTime.Now.Ticks; e.productionOrderId = inputData.productionOrderId;
+            e.startDate = _context.EndRoll.Where(x=> x.productionOrderId == g.orderId).Max(p => (long?)p.endDate);
+            if(e.startDate == null)
+                e.startDate = g.startDate;
+            e.quantity = inputData.quantity.ToString();    
+            return e;
         }
 
         public async Task<List<Tool>> getTools(long startDate, long endDate){
@@ -113,6 +152,8 @@ namespace historianproductionservice.Service{
             foreach(ProductTraceability r in rolo)
                 acos.Add(new Aco(r.quantity.ToString(), r.batch, r.date, r.endDate));                
             foreach(ProductTraceability p in ligas){          
+                if((await _orderService.getProductionOrderId(Int32.Parse(p.code))) == null)
+                    throw new System.ArgumentException("Uma ou mais ligas sem apontamentos" , "Por favor cadastre o apontamento!");    
                 ligasList.Add(new Liga(Convert.ToInt64(p.code), p.batch, p.date, p.endDate, p.code, p.quantity.ToString(), p.batch, (await _orderService.getProductionOrderId(Int32.Parse(p.code))).productsInput));                            
             }
             return (acos, ligasList);
@@ -121,12 +162,12 @@ namespace historianproductionservice.Service{
 
 
         public async Task<List<ProductTraceability>> getProducts(long? startDate, long? endDate, List<ProductTraceability> produtos){
-            produtos.Sort((x,y) => x.date.CompareTo(y.date)); 
-            Console.WriteLine(startDate); 
-            Console.WriteLine(endDate); 
+            if(produtos.Count == 0 )
+                throw new System.ArgumentException("Não foram encontrados rolos de entrada ou ligas", "Por favor cadastre o produto correspondente");
+            produtos.Sort((x,y) => x.date.CompareTo(y.date));                         
             for(int i=0; i<produtos.Count-1; i++)
-                produtos[i].endDate = produtos[i+1].date;                             
-            produtos[produtos.Count-1].endDate = endDate.Value;
+                produtos[i].endDate = produtos[i+1].date;                                         
+            produtos[produtos.Count-1].endDate = endDate.Value;            
             List<ProductTraceability> retorno = new List<ProductTraceability>();
             retorno.AddRange(produtos.Where(c => c.date >= startDate && c.endDate <= endDate).ToList());            
             Console.WriteLine(retorno.Count);

@@ -46,7 +46,7 @@ namespace historianproductionservice.Controllers {
                         return StatusCode (500, "erro in api");
                     return Created ($"api/Product/", inputData);
                 }
-                return BadRequest (ModelState);
+                return BadRequest("ModelState");
             } catch (Exception ex) {
                 return StatusCode (500, ex.ToString ());
             }

@@ -79,7 +79,7 @@ namespace historianproductionservice.Migrations
 
                     b.Property<string>("quantity");
 
-                    b.Property<long>("startDate");
+                    b.Property<long?>("startDate");
 
                     b.HasKey("id");
 
@@ -98,6 +98,10 @@ namespace historianproductionservice.Migrations
                     b.Property<long>("orderId");
 
                     b.Property<string>("productionOrderNumber");
+
+                    b.Property<string>("recipeCode");
+
+                    b.Property<string>("recipeid");
 
                     b.Property<long>("startDate");
 

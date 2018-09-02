@@ -11,8 +11,8 @@ using System;
 namespace historianproductionservice.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180819222448_UpdateEndRoll")]
-    partial class UpdateEndRoll
+    [Migration("20180824133242_Genealogia")]
+    partial class Genealogia
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -80,7 +80,7 @@ namespace historianproductionservice.Migrations
 
                     b.Property<string>("quantity");
 
-                    b.Property<long>("startDate");
+                    b.Property<long?>("startDate");
 
                     b.HasKey("id");
 
@@ -99,6 +99,10 @@ namespace historianproductionservice.Migrations
                     b.Property<long>("orderId");
 
                     b.Property<string>("productionOrderNumber");
+
+                    b.Property<string>("recipeCode");
+
+                    b.Property<string>("recipeid");
 
                     b.Property<long>("startDate");
 
