@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace historianproductionservice.Migrations
 {
-    public partial class UpdateEndRoll : Migration
+    public partial class Genealogia : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,6 +18,8 @@ namespace historianproductionservice.Migrations
                     endDate = table.Column<long>(nullable: false),
                     orderId = table.Column<long>(nullable: false),
                     productionOrderNumber = table.Column<string>(nullable: true),
+                    recipeCode = table.Column<string>(nullable: true),
+                    recipeid = table.Column<string>(nullable: true),
                     startDate = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
@@ -49,7 +51,7 @@ namespace historianproductionservice.Migrations
                     endDate = table.Column<long>(nullable: false),
                     productionOrderId = table.Column<long>(nullable: false),
                     quantity = table.Column<string>(nullable: true),
-                    startDate = table.Column<long>(nullable: false)
+                    startDate = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
                 {

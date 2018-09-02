@@ -3,15 +3,17 @@ using System.Collections.Generic;
 
 namespace historianproductionservice.Model.Genealogy{
     public class Genealogy{   
-        public Genealogy(long productionOrderId, string productionOrderNumber, long startDate, long endDate, List<EndRoll> outputRolls){
+        public Genealogy(long productionOrderId, string productionOrderNumber, long startDate, long endDate, List<EndRoll> outputRolls, string recipeCode, string recipeid){
             this.orderId = productionOrderId;
             this.productionOrderNumber = productionOrderNumber;
             this.startDate = startDate;
             this.outputRolls = outputRolls;
+            this.recipeCode = recipeCode;
+            this.recipeid = recipeid;
         }
 
         public Genealogy(){ }
-        public long id {get;set;}     
+        public long id { get; set; }     
         public long orderId { get; set; } 
         public string productionOrderNumber { get ; set ; }               
         public long startDate { get; set; }        

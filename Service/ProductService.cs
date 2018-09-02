@@ -126,9 +126,10 @@ namespace historianproductionservice.Service
             var builder = new UriBuilder(_configuration["productionOrdersServiceEndpoint"] + "/api/productionorders/" + orderId);
             Console.WriteLine(builder.ToString());
             string url = builder.ToString();
-            var result = await client.GetAsync(url);
+            var result = await client.GetAsync(url);            
             if (result.StatusCode == HttpStatusCode.OK){
                 OrderRecipe = (await client.GetStringAsync(url));
+                Console.WriteLine("Retornou bunitu");
                 return OrderRecipe;
             }
             Console.WriteLine("Retornando nulo");
