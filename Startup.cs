@@ -41,10 +41,10 @@ namespace historianproductionservice {
             services.AddSingleton<IConfiguration> (Configuration);
             services.AddTransient<IEncryptService, EncryptService> ();
 
-            if (!String.IsNullOrEmpty (Configuration["KeyFolder"]))
+            //if (!String.IsNullOrEmpty (Configuration["KeyFolder"]))
                 services.AddDataProtection ()
                 .SetApplicationName ("Lorien")
-                .PersistKeysToFileSystem (new DirectoryInfo (Configuration["KeyFolder"]));
+                //.PersistKeysToFileSystem (new DirectoryInfo (Configuration["KeyFolder"]));
 
             services.AddDbContext<ApplicationDbContext> (options =>
                 options.UseNpgsql (Configuration.GetConnectionString ("HistorianProductionDB")));
