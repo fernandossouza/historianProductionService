@@ -12674,35 +12674,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fernandat\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\ricardos\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\historianproductionservice.csproj",
+      "projectUniqueName": "C:\\Users\\ricardos\\Desktop\\ProjetosC#\\historianproductionservice\\historianproductionservice.csproj",
       "projectName": "historianproductionservice",
-      "projectPath": "C:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\historianproductionservice.csproj",
-      "packagesPath": "C:\\Users\\fernandat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\obj\\",
+      "projectPath": "C:\\Users\\ricardos\\Desktop\\ProjetosC#\\historianproductionservice\\historianproductionservice.csproj",
+      "packagesPath": "C:\\Users\\ricardos\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ricardos\\Desktop\\ProjetosC#\\historianproductionservice\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\NuGet.Config",
-        "C:\\Users\\fernandat\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\ricardos\\Desktop\\ProjetosC#\\historianproductionservice\\NuGet.Config",
+        "C:\\Users\\ricardos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\fernandat\\workspace\\Mahle\\historianproductionservice\\./Libs/": {},
+        "C:\\Users\\ricardos\\Desktop\\ProjetosC#\\historianproductionservice\\./Libs/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

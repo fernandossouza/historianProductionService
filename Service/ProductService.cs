@@ -105,41 +105,38 @@ namespace historianproductionservice.Service
             return product;
         }
 
-        private ProductTraceability CreateProduct(InputData inputData, string ProductName)
-        {
+        private ProductTraceability CreateProduct(InputData inputData, string ProductName){
             ProductTraceability product = new ProductTraceability();
-
             product.productId = inputData.productId;
             product.product = ProductName;
             product.batch = inputData.batch;
             product.quantity = inputData.quantity.Value;
             product.date = DateTime.Now.Ticks;
             product.username = inputData.username;
-
+            product.code = inputData.code;
+            product.productType = inputData.productType;
             return product;
         }
 
-        private async Task<string> GetProductionOrderApi(int orderId)
-        {
+        private async Task<string> GetProductionOrderApi(int orderId){
             HttpClient client = new HttpClient();
             string OrderRecipe = string.Empty;
-
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var builder = new UriBuilder(_configuration["productionOrdersServiceEndpoint"] + "/api/productionorders/" + orderId);
+            Console.WriteLine(builder.ToString());
             string url = builder.ToString();
-            var result = await client.GetAsync(url);
-            if (result.StatusCode == HttpStatusCode.OK)
-            {
+            var result = await client.GetAsync(url);            
+            if (result.StatusCode == HttpStatusCode.OK){
                 OrderRecipe = (await client.GetStringAsync(url));
+                Console.WriteLine("Retornou bunitu");
                 return OrderRecipe;
             }
             Console.WriteLine("Retornando nulo");
             return null;
         }
 
-        private (bool, string, string) CheckProductInRecipe(int ProductId, string OrderRecipe)
-        {
+        private (bool, string, string) CheckProductInRecipe(int ProductId, string OrderRecipe){
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
