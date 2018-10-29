@@ -114,7 +114,8 @@ namespace historianproductionservice.Service{
 
         public async Task<EndRoll> instanciaEndRoll(InputData inputData, Genealogy g){
             EndRoll e = new EndRoll();
-            e.endDate = DateTime.Now.Ticks; e.productionOrderId = inputData.productionOrderId;
+            e.endDate = DateTime.Now.Ticks; 
+            e.productionOrderId = inputData.productionOrderId;
             e.startDate = _context.EndRoll.Where(x=> x.productionOrderId == g.orderId).Max(p => (long?)p.endDate);
             if(e.startDate == null)
                 e.startDate = g.startDate;
@@ -130,7 +131,9 @@ namespace historianproductionservice.Service{
             Console.WriteLine("Passou pela big ");                
             List<Tag> tags = JsonConvert.DeserializeObject<List<Tag>>(JObject.Parse(await client.GetStringAsync(builder.ToString()))["tags"].ToString());                         
             List<Tag> toolIds = tags.Where(c => c.name == "toolId").ToList();                               
-            List<Tag> vida_utils = tags.Where(c => c.name == "vida_util").ToList();  /*Limpando memoria*/ tags = null;                        
+            List<Tag> vida_utils = tags.Where(c => c.name == "vida_util").ToList();  
+            /*Limpando memoria*/ 
+            tags = null;                        
             string[] vetTags = new string[toolIds.Count];int i=0;                        
             foreach(Tag t in toolIds)
                 vetTags[i++] = t.value.First();                 
@@ -186,7 +189,6 @@ namespace historianproductionservice.Service{
             HistState state = states.Where(x => x.state == "active").FirstOrDefault();            
             Console.WriteLine(builder.ToString());
             return (state.date);
-        }
-               
+        }               
     }
 }

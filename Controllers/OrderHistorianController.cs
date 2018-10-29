@@ -18,7 +18,7 @@ namespace historianproductionservice.Controllers {
         }             
 
         [HttpGet ("{id}")]
-        [SecurityFilter ("historian_production__allow_read")]
+        //[SecurityFilter ("historian_production__allow_read")]
         public async Task<IActionResult> Get (int id) {
             try {
                 var tool = await _orderService.getProductionOrderId (id);

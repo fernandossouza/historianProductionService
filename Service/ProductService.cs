@@ -158,9 +158,17 @@ namespace historianproductionservice.Service
 
                 var product = products.FirstOrDefault(x => (int)x.SelectToken("productId") == ProductId);
 
-                if (product != null)
+                if (product != null || ProductId == 70)
                 {
-                    ProductName = (string)product.SelectToken("productName");
+                    if(ProductId == 70)
+                    {
+                        ProductName = "Cobre Fosforoso";
+                    }
+                    else
+                    {
+                        ProductName = (string)product.SelectToken("productName");
+                    }
+                    
                     ProductionOrderName = (string)recipeJson["productionOrderNumber"];
                     return (true, ProductName, ProductionOrderName);
                 }

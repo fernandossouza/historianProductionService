@@ -43,7 +43,7 @@ namespace historianproductionservice {
 
             //if (!String.IsNullOrEmpty (Configuration["KeyFolder"]))
                 services.AddDataProtection ()
-                .SetApplicationName ("Lorien")
+                .SetApplicationName ("Lorien");
                 //.PersistKeysToFileSystem (new DirectoryInfo (Configuration["KeyFolder"]));
 
             services.AddDbContext<ApplicationDbContext> (options =>
