@@ -107,7 +107,7 @@ namespace historianproductionservice.Service{
             if(o==null)
                 Console.WriteLine("O == null");            
             if(o == null || o.productsInput == null || o.productsInput.Count == 0)
-                throw new System.ArgumentException("Não foram encontrados rolos de entrada", "Por favor cadastre o aço correspondente");
+                throw new System.ArgumentException("Não foram encontrados rolos de entrada. Por favor cadastre o aço correspondente");
             List<ProductTraceability> lista = o.productsInput;
             return lista;
         }
@@ -156,7 +156,7 @@ namespace historianproductionservice.Service{
                 acos.Add(new Aco(r.quantity.ToString(), r.batch, r.date, r.endDate));                
             foreach(ProductTraceability p in ligas){          
                 if((await _orderService.getProductionOrderId(Int32.Parse(p.code))) == null)
-                    throw new System.ArgumentException("Uma ou mais ligas sem apontamentos" , "Por favor cadastre o apontamento!");    
+                    throw new System.ArgumentException("Uma ou mais OPL sem apontamentos. Por favor cadastre o apontamento!");    
                 ligasList.Add(new Liga(Convert.ToInt64(p.code), p.batch, p.date, p.endDate, p.code, p.quantity.ToString(), p.batch, (await _orderService.getProductionOrderId(Int32.Parse(p.code))).productsInput));                            
             }
             return (acos, ligasList);
@@ -166,7 +166,7 @@ namespace historianproductionservice.Service{
 
         public async Task<List<ProductTraceability>> getProducts(long? startDate, long? endDate, List<ProductTraceability> produtos){
             if(produtos.Count == 0 )
-                throw new System.ArgumentException("Não foram encontrados rolos de entrada ou ligas", "Por favor cadastre o produto correspondente");
+                throw new System.ArgumentException("Não foram encontrados rolos de entrada ou OPL. Por favor cadastre o produto correspondente");
             produtos.Sort((x,y) => x.date.CompareTo(y.date));                         
             for(int i=0; i<produtos.Count-1; i++)
                 produtos[i].endDate = produtos[i+1].date;                                         
@@ -177,7 +177,7 @@ namespace historianproductionservice.Service{
             if(retorno.Count == 0)
                 retorno.Add(produtos.Where(c => c.date < endDate).OrderByDescending(c=> c.date).FirstOrDefault());                            
             if(retorno.Count == 0)
-                throw new System.ArgumentException("Não foram encontrados rolos de entrada", "Por favor cadastre o aço correspondente");
+                throw new System.ArgumentException("Não foram encontrados rolos de entrada. Por favor cadastre o aço correspondente");
             return retorno;
         }
 
